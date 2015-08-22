@@ -1,2 +1,2 @@
 # codeAcceleration
-accelerating an existing code using various code acceleration technques that includes for/while loop unlooping, pragma, rearranging code, gprof analysis, etc.
+accelerating an existing code using various code acceleration technques that includes unrolling for/while loop, pragma, variables/code rearrangement, gprof and hard-coded timed analysis, compiler optimization, etc.
