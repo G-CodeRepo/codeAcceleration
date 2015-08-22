@@ -1,0 +1,70 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 version 1 part 1:\
+organized code to make it more legible\
+pragma on inner most loop in main\
+\
+version 1 part 2:\
+pragma in process_SN() function\
+\
+version 1 part 3:\
+pragma in \
+	process_SN_end_subsection() function\
+	copy_into_star1()\
+	copy_into_star2()\
+	create_columns() \
+\
+\
+\
+version 1 part 4:\
+converted inner while loop in create_columns() to a for loop to use pragma\
+allow only 1 concurrent thread\
+have nested calculations rather than store in variables\
+\
+false dependencies\
+\
+	a = (b*c) + d  ->		x = b*c\
+					a = x + d\
+pragma scheduling (dynamic)\
+\
+not use local variables for some calculations local variables\
+\
+	fact[0] * d	->		int x = fact[0]\
+					x * d\
+\
+moving variables closer to where it is used (length of jump is smaller)\
+\
+\
+\
+							\
+\
+use macros\
+#define somefunction(x, y)\
+\
+minimized shared pragma\
+\
+version 1 part 5:\
+removed unnecessary critical sections that won\'92t affect other threads (there is only 1 thread)\
+less block of code for critical sections\
+comment out unused variables\
+replaced #define variables with literal numbers\
+unravel for loop into parallel sections (only works for some for loops)\
+	the copy loops don\'92t work so well\
+\
+\
+version 1 part 6:\
+modified SFN.cpp\
+memcpy\
+unroll loop\
+for (int i = 0; i < 3 ; i++) \{		\'97>       	// do something\
+	// do something				// do something\
+\}							// do something\
+\
+mersenne.cpp\
+#pragma\
+\
+copy_star2_into_star1}
